@@ -18,9 +18,11 @@
 .feed__input {
     border: 1px solid lightgray;
     display: flex;
+    height: 50px;
+    align-items: center;
     padding: 10px;
     color: gray;
-    padding-left: 15px;
+    padding-left: 10px;
     border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -48,4 +50,11 @@
 .feed__inputOptions {
     display: flex;
     justify-content: space-evenly;
+}
+
+
+.feed__inputIcon {
+    object-fit: contain;
+    height: 25px !important;
+    width: 25px !important;
 }

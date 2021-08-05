@@ -1,8 +1,11 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 import './Sidebar.css';
 
 function Sidebar() {
+    const user = useSelector(selectUser)
 
     const recentItem = (topick) => (
         <div className="sidebar__recentItem">
@@ -13,10 +16,10 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebar__top">
-                <img src="https://scontent.fdac31-1.fna.fbcdn.net/v/t1.6435-9/92449803_103766361297602_2603867134865965056_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=9GvacuSnb8MAX9wG9Z-&_nc_ht=scontent.fdac31-1.fna&oh=e4774f8aa89b0b0cfb5f10f9532ab727&oe=612F2642" alt="" />
-                <Avatar className="sidebar__avatar" />
-                <h2>Develloper Tawhid</h2>
-                <h4>developertawhid@gmail.com</h4>
+                <img src="https://img.freepik.com/free-vector/smooth-mesh-blurred-background-multi-color-gradient-pattern-smooth-modern-watercolor-style-backdrop_124894-147.jpg?size=626&ext=jpg&ga=GA1.2.2099647507.1627689600" alt="" />
+                <Avatar src={user?.photoUrl } className="sidebar__avatar" >{ user && user?.displeyName[0] }</Avatar>
+                <h2>{ user.displeyName }</h2>
+                <h4>{ user.email }</h4>
             </div>
 
             <div className="sidebar__stats">
